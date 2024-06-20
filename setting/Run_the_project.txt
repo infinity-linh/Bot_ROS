@@ -1,0 +1,16 @@
+
+
+python3 -m pip install --user virtualenv
+python3 -m virtualenv ROS2SDC_VENV
+source ROS2SDC_VENV/bin/activate
+pip3 install -r setting/requirements.txt
+
+sudo apt install -y python3-colcon-common-extensions
+sudo apt install -y ros-foxy-gazebo-ros-pkgs
+
+touch ROS2SDC_VENV/COLCON_IGNORE
+colcon build
+
+source ROS2SDC_VENV/bin/activate
+
+pip install protobuf==3.20.0
